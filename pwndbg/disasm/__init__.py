@@ -78,6 +78,7 @@ def get_disassembler_cached(arch, ptrsize, endian, extra=None):
 
     cs = Cs(arch, mode)
     cs.detail = True
+    cs.syntax = CS_OPT_SYNTAX_ATT
     return cs
 
 def get_disassembler(pc):
@@ -92,7 +93,7 @@ def get_disassembler(pc):
             extra = CS_MODE_V9
         else:
             # The ptrsize base modes cause capstone.CsError: Invalid mode (CS_ERR_MODE)
-            extra = 0 
+            extra = 0
     else:
         extra = None
 

@@ -149,7 +149,7 @@ for line in pre_commands.strip().splitlines():
 
 # This may throw an exception, see pwndbg/pwndbg#27
 try:
-    gdb.execute("set disassembly-flavor intel")
+    gdb.execute("set disassembly-flavor att")
 except gdb.error:
     pass
 
